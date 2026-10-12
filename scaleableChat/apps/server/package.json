@@ -1,0 +1,27 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node dist/index",
+        "db:generate": "prisma generate --config prisma7.config.ts",
+        "build": "npm run db:generate && tsc -p .",
+        "dev": "npm run db:generate && tsc-watch --onSuccess \"node dist/index.js\""
+    },
+    "devDependencies": {
+        "@types/node": "^26.6.5",
+        "prisma": "^7.10.0",
+        "ts-node": "^10.9.2",
+        "tsc-watch": "^7.2.1",
+        "typescript": "^7.0.2"
+    },
+    "dependencies": {
+        "@prisma/adapter-pg": "^7.10.0",
+        "@prisma/client": "^7.10.0",
+        "dotenv": "^18.0.7",
+        "ioredis": "^6.0.0",
+        "kafkajs": "^2.2.4",
+        "pg": "^8.23.1",
+        "socket.io": "^4.8.4"
+    }
+}
